@@ -33,6 +33,11 @@ public class CardTest {
 		assertEquals("KingHearts", d1.cards[51].print());
 		
 		Deck d2 = new Deck();
+		
+		assertEquals(d1.cards[0].print(), d2.cards[0].print());
+		assertEquals(d1.cards[10].print(), d2.cards[10].print());
+		assertEquals(d1.cards[20].print(), d2.cards[20].print());
+		assertEquals(d1.cards[43].print(), d2.cards[43].print());
 		d2.shuffle();
 		assertNotEquals(d1.cards[0].print(), d2.cards[0].print());
 		assertNotEquals(d1.cards[10].print(), d2.cards[10].print());

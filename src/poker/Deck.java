@@ -1,7 +1,10 @@
 package poker;
 
+import java.util.Random;
+
 public class Deck {
 	final int MAX_SIZE = 52;
+	Random random = new Random();
 
 	Card[] cards = new Card[MAX_SIZE];
 	
@@ -23,6 +26,17 @@ public class Deck {
 				cards[counter].rank = rank;
 				++counter;
 			}
+		}
+	}
+
+	public void shuffle() {
+		int num1, num2;
+		for(int i=0; i < 1000; i++){
+			num1 = random.nextInt(MAX_SIZE);
+			num2 = random.nextInt(MAX_SIZE);
+			Card temp = cards[num1];
+			cards[num1] = cards[num2];
+			cards[num2] = temp;
 		}
 	}
 	
