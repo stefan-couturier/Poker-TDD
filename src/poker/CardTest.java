@@ -8,22 +8,26 @@ public class CardTest {
 
 	@Test
 	public void test() {
-		Card c = new Card();
-		c.suit = 'S';
-		c.rank = 1;
-		assertEquals("AceSpades", c.print());
+		Card c1 = new Card();
+		c1.suit = 'S';
+		c1.rank = 1;
+		assertEquals("AceSpades", c1.print());
 		
-		Card d = new Card();
-		d.suit = 'D';
-		d.rank = 1;
-		assertEquals( 0, d.compareTo(c));
+		Card c2 = new Card();
+		c2.suit = 'D';
+		c2.rank = 1;
+		assertEquals( 0, c2.compareTo(c1));
 		
-		Card e = new Card();
-		e.suit = 'D';
-		e.rank = 6;
+		Card c3 = new Card();
+		c3.suit = 'D';
+		c3.rank = 6;
 
-		assertEquals( -1, e.compareTo(d));
-		assertEquals( 1, d.compareTo(e));
+		assertEquals( 1, c3.compareTo(c2));
+		assertEquals( -1, c2.compareTo(c3));
+		
+		Deck d = new Deck();
+		assertNotNull(d);
+		assertEquals("AceClubs", d.cards[1].print());
 	}
 
 }
