@@ -47,4 +47,15 @@ public class Card {
 			value += "";
 		return value;
 	}
+
+	public int compareTo(Card c) {
+		if(rank == c.rank)
+			return 0;
+		else if(rank > c.rank)
+			return 1;
+		else if(rank < c.rank)
+			return -1;
+		
+		return 999;
+	}
 }
