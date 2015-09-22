@@ -25,12 +25,19 @@ public class CardTest {
 		assertEquals( 1, c3.compareTo(c2));
 		assertEquals( -1, c2.compareTo(c3));
 		
-		Deck d = new Deck();
-		assertNotNull(d);
-		assertEquals("AceClubs", d.cards[0].print());
-		assertEquals("KingClubs", d.cards[12].print());
-		assertEquals("ThreeDiamonds", d.cards[15].print());
-		assertEquals("KingHearts", d.cards[51].print());
+		Deck d1 = new Deck();
+		assertNotNull(d1);
+		assertEquals("AceClubs", d1.cards[0].print());
+		assertEquals("KingClubs", d1.cards[12].print());
+		assertEquals("ThreeDiamonds", d1.cards[15].print());
+		assertEquals("KingHearts", d1.cards[51].print());
+		
+		Deck d2 = new Deck();
+		d2.shuffle();
+		assertNotEquals(d1.cards[0].print(), d2.cards[0].print());
+		assertNotEquals(d1.cards[10].print(), d2.cards[10].print());
+		assertNotEquals(d1.cards[20].print(), d2.cards[20].print());
+		assertNotEquals(d1.cards[43].print(), d2.cards[43].print());
 	}
 
 }
