@@ -27,7 +27,10 @@ public class CardTest {
 		
 		Deck d = new Deck();
 		assertNotNull(d);
-		assertEquals("AceClubs", d.cards[1].print());
+		assertEquals("AceClubs", d.cards[0].print());
+		assertEquals("KingClubs", d.cards[12].print());
+		assertEquals("ThreeDiamonds", d.cards[15].print());
+		assertEquals("KingHearts", d.cards[51].print());
 	}
 
 }
