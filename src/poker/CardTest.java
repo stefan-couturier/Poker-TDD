@@ -9,8 +9,8 @@ public class CardTest {
 	@Test
 	public void test() {
 		Card c = new Card();
-		c.suit = "";
-		c.rank = 10;
+		c.suit = 'S';
+		c.rank = 1;
 		assertEquals("AceSpades", c.print());
 	}
 

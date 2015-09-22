@@ -2,7 +2,7 @@ package poker;
 
 public class Card {
 	public int rank;
-	public String suit;
+	public char suit;
 	
 	public String print(){
 		String value = "";
@@ -35,6 +35,16 @@ public class Card {
 			value = "King";
 		else
 			value = "ValueError";
+		if(suit == 'H')
+			value += "Hearts";
+		else if(suit == 'D')
+			value += "Diamonds";
+		else if(suit == 'S')
+			value += "Spades";
+		else if(suit == 'C')
+			value += "Clubs";
+		else
+			value += "";
 		return value;
 	}
 }
