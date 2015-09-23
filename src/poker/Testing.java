@@ -68,7 +68,7 @@ public class Testing {
 	
 	public void testPlayer(){
 		Player p1 = new Player("Stefan");
-		assertNotNULL(p1);
+		assertNotNull(p1);
 		assertEquals(p1.getName(), "Stefan");
 	}
 
