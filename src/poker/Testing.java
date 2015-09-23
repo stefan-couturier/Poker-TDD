@@ -14,6 +14,7 @@ public class Testing {
 	}
 	
 	public void testCards(){
+		//create card assign values
 		Card c1 = new Card();
 		c1.suit = 'S';
 		c1.rank = 1;
@@ -33,6 +34,7 @@ public class Testing {
 	}
 	
 	public void testDeck(){
+		//building deck and checking card values
 		Deck d1 = new Deck();
 		assertNotNull(d1);
 		assertEquals("AceClubs", d1.cards[0].print());
@@ -40,6 +42,7 @@ public class Testing {
 		assertEquals("ThreeDiamonds", d1.cards[15].print());
 		assertEquals("KingHearts", d1.cards[51].print());
 		
+		//testing if shuffle works
 		Deck d2 = new Deck();
 		
 		assertEquals(d1.cards[0].print(), d2.cards[0].print());
@@ -52,11 +55,13 @@ public class Testing {
 		assertNotEquals(d1.cards[20].print(), d2.cards[20].print());
 		assertNotEquals(d1.cards[43].print(), d2.cards[43].print());
 		
+		//checking if dealing works, make sure not to deal same cards
 		Card[] hand1 = null;
 		hand1 = d2.deal();
 		for(int x=0;x<5;x++){
 			assertNotNull(hand1[0]);
 		}
+		
 		Card[] hand2 = null;
 		hand2 = d2.deal();
 		assertNotEquals(hand2[0].print(), hand1[0].print());
@@ -65,11 +70,17 @@ public class Testing {
 		assertNotEquals(hand2[3].print(), hand1[3].print());
 		assertNotEquals(hand2[4].print(), hand1[4].print());
 		
+		//check ordering of hand
+		assertTrue((d2.cards[0].rank <= d2.cards[1].rank) &&
+				(d2.cards[1].rank <= d2.cards[2].rank) &&
+				(d2.cards[2].rank <= d2.cards[3].rank) &&
+				(d2.cards[3].rank <= d2.cards[4].rank));
+		
+		//check printing out a hand
 		String x1 = (d2.cards[0].print() + "," + d2.cards[1].print() + "," + d2.cards[2].print() + 
 				"," + d2.cards[3].print() + "," + d2.cards[4].print());
 		String x2 = d2.print();
-		System.out.print(d2.print());
-		
+		System.out.print(d2.print());		
 	}
 	
 	public void testPlayer(){
