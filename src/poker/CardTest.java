@@ -52,10 +52,10 @@ public class CardTest {
 		Card[] hand2 = null;
 		hand2 = d2.deal();
 		assertNotEquals(hand2[0].print(), hand1[0].print());
-		assertNotEquals(hand2[10].print(), hand1[10].print());
-		assertNotEquals(hand2[20].print(), hand1[20].print());
-		assertNotEquals(hand2[43].print(), hand1[43].print());
-		assertNotEquals(hand2[43].print(), hand1[43].print());
+		assertNotEquals(hand2[1].print(), hand1[1].print());
+		assertNotEquals(hand2[2].print(), hand1[2].print());
+		assertNotEquals(hand2[3].print(), hand1[3].print());
+		assertNotEquals(hand2[4].print(), hand1[4].print());
 		
 	}
 
