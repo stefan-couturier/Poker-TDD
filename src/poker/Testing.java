@@ -4,10 +4,15 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class CardTest {
+public class Testing {
 
 	@Test
 	public void test() {
+		testCards();
+		testDeck();
+	}
+	
+	public void testCards(){
 		Card c1 = new Card();
 		c1.suit = 'S';
 		c1.rank = 1;
@@ -24,7 +29,9 @@ public class CardTest {
 
 		assertEquals( 1, c3.compareTo(c2));
 		assertEquals( -1, c2.compareTo(c3));
-		
+	}
+	
+	public void testDeck(){
 		Deck d1 = new Deck();
 		assertNotNull(d1);
 		assertEquals("AceClubs", d1.cards[0].print());
@@ -56,7 +63,6 @@ public class CardTest {
 		assertNotEquals(hand2[2].print(), hand1[2].print());
 		assertNotEquals(hand2[3].print(), hand1[3].print());
 		assertNotEquals(hand2[4].print(), hand1[4].print());
-		
 	}
 
 }
