@@ -65,10 +65,10 @@ public class Testing {
 		assertNotEquals(hand2[3].print(), hand1[3].print());
 		assertNotEquals(hand2[4].print(), hand1[4].print());
 		
-		String x1 = (d2.cards[0].toString() + "," + d2.cards[1].toString() + "," + d2.cards[2].toString() + 
-				"," + d2.cards[3].toString() + "," + d2.cards[4].toString());
+		String x1 = (d2.cards[0].print() + "," + d2.cards[1].print() + "," + d2.cards[2].print() + 
+				"," + d2.cards[3].print() + "," + d2.cards[4].print());
 		String x2 = d2.print();
-		System.out.print();
+		System.out.print(d2.print());
 		
 	}
 	

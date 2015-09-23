@@ -52,5 +52,14 @@ public class Deck {
 		}
 		return hand;
 	}
+
+	public String print() {
+		String s = "";
+		for(int x=0; x< MAX_HAND;x++){
+			s+= cards[x].print() + ",";
+		}
+		s = s.substring(0, s.length()-1);
+		return s;
+	}
 	
 }
