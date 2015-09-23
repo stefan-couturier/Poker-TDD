@@ -70,6 +70,7 @@ public class Testing {
 		assertNotEquals(hand2[3].print(), hand1[3].print());
 		assertNotEquals(hand2[4].print(), hand1[4].print());
 		
+		hand2.sort();
 		//check ordering of hand
 		assertTrue((d2.cards[0].rank <= d2.cards[1].rank) &&
 				(d2.cards[1].rank <= d2.cards[2].rank) &&

@@ -58,4 +58,8 @@ public class Card {
 		
 		return 999;
 	}
+	
+	public void sort() {
+		
+	}
 }
