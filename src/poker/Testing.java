@@ -10,6 +10,7 @@ public class Testing {
 	public void test() {
 		testCards();
 		testDeck();
+		testPlayer();
 	}
 	
 	public void testCards(){
@@ -63,6 +64,12 @@ public class Testing {
 		assertNotEquals(hand2[2].print(), hand1[2].print());
 		assertNotEquals(hand2[3].print(), hand1[3].print());
 		assertNotEquals(hand2[4].print(), hand1[4].print());
+	}
+	
+	public void testPlayer(){
+		Player p1 = new Player("Stefan");
+		assertNotNULL(p1);
+		assertEquals(p1.getName(), "Stefan");
 	}
 
 }
