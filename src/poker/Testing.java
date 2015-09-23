@@ -80,7 +80,9 @@ public class Testing {
 		String x1 = (d2.cards[0].print() + "," + d2.cards[1].print() + "," + d2.cards[2].print() + 
 				"," + d2.cards[3].print() + "," + d2.cards[4].print());
 		String x2 = d2.print();
-		System.out.print(d2.print());		
+		assertEquals(x1, x2);
+		System.out.print(x1);
+		System.out.print(x2);		
 	}
 	
 	public void testPlayer(){
