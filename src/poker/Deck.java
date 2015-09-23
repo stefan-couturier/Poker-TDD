@@ -4,11 +4,14 @@ import java.util.Random;
 
 public class Deck {
 	final int MAX_SIZE = 52;
+	final int MAX_HAND = 5;
 	Random random = new Random();
+	public int position;
 
 	Card[] cards = new Card[MAX_SIZE];
 	
 	public Deck(){
+		position = 0;
 		int counter = 0;
 		char suit = ' ';
 		for(int s = 0; s < 4; s++){
@@ -38,6 +41,15 @@ public class Deck {
 			cards[num1] = cards[num2];
 			cards[num2] = temp;
 		}
+	}
+	
+	public Card[] deal(){
+		Card[] hand = new Card[MAX_HAND];
+		for(int x =0; x<MAX_HAND;x++){
+			hand[x] = cards[position];
+			++position;
+		}
+		return hand;
 	}
 	
 }
