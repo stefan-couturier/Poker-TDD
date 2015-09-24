@@ -231,5 +231,17 @@ public class Testing {
 		assertTrue(p1.getHandValue() == 6);
 		assertTrue(p2.getHandValue() == 8);
 		g1.compareHands(p1, p2);
+		
+		p3.setHandValue(g1.checkHand(p3.getHand()));
+		p4.setHandValue(g1.checkHand(p4.getHand()));
+		g1.compareHands(p1, p3);
+		g1.compareHands(p1, p4);
+		g1.compareHands(p2, p3);
+		g1.compareHands(p2, p4);
+		g1.compareHands(p3, p4);
+		
+		assertTrue(p1.getRank() < p2.getRank());
+		assertTrue(p1.getHandValue() == 6);
+		assertTrue(p2.getHandValue() == 8);
 	}
 }
