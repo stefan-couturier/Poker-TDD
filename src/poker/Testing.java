@@ -81,13 +81,15 @@ public class Testing {
 		
 				//check ordering of hand
 		Deck d1 = new Deck();
+		d1.shuffle();
 		p1.setHand(d1.deal());
 		p1.sort();
 		Card[] h1 = p1.getHand();
-		/*assertTrue((h1[0].getRank() <= h1[1].getRank()) &&
+		assertTrue((h1[0].getRank() <= h1[1].getRank()) &&
 				(h1[1].getRank() <= h1[2].getRank()) &&
 				(h1[2].getRank() <= h1[3].getRank()) &&
-				(h1[3].getRank() <= h1[4].getRank()));*/
+				(h1[3].getRank() <= h1[4].getRank()));
+		System.out.print("\n" + p1.printHand());
 	}
 
 }
