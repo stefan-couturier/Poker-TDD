@@ -1,6 +1,7 @@
 package poker;
 
 public class Game {
+	final int MAX_HAND = 5;
 
 	public String checkHand(Card[] hand) {
 		if(royalFlush(hand))
@@ -35,42 +36,85 @@ public class Game {
 	}
 
 	private boolean straightFlush(Card[] hand) {
-		// TODO Auto-generated method stub
-		return false;
+		for(int x=1; x < MAX_HAND; x++){
+			if(hand[0].getSuit() != hand[x].getSuit())
+				return false;
+		}
+		for(int x=1; x< MAX_HAND; x++){
+			if(hand[x-1].getRank() != hand[x].getRank()- 1)
+				return false;
+		}
+		return true;
 	}
 
 	private boolean fourKind(Card[] hand) {
-		// TODO Auto-generated method stub
+		if(hand[0].getRank() == hand[1].getRank() && hand[0].getRank() == hand[2].getRank() && 
+				hand[0].getRank() == hand[3].getRank())
+			return true;
+		if(hand[1].getRank() == hand[2].getRank() && hand[1].getRank() == hand[3].getRank() && 
+				hand[1].getRank() == hand[4].getRank())
+			return true;
 		return false;
 	}
 
 	private boolean fullHouse(Card[] hand) {
-		// TODO Auto-generated method stub
+		if(hand[0].getRank() == hand[1].getRank() && hand[0].getRank() == hand[2].getRank() && 
+				hand[3].getRank() == hand[4].getRank())
+			return true;
+		if(hand[0].getRank() == hand[1].getRank() && hand[2].getRank() == hand[3].getRank() && 
+				hand[2].getRank() == hand[4].getRank())
+			return true;
 		return false;
 	}
 
 	private boolean flush(Card[] hand) {
-		// TODO Auto-generated method stub
-		return false;
+		for(int x=1; x < MAX_HAND; x++){
+			if(hand[0].getSuit() != hand[x].getSuit())
+				return false;
+		}
+		return true;
 	}
 
 	private boolean straight(Card[] hand) {
-		// TODO Auto-generated method stub
+		for(int x=1; x< MAX_HAND; x++){
+			if(hand[x-1].getRank() != hand[x].getRank()- 1)
+				return false;
+		}
 		return false;
 	}
 
 	private boolean threeKind(Card[] hand) {
-		// TODO Auto-generated method stub
+		if(hand[0].getRank() == hand[1].getRank() && hand[0].getRank() == hand[2].getRank())
+			return true;
+		if(hand[1].getRank() == hand[2].getRank() && hand[1].getRank() == hand[3].getRank())
+			return true;
+		if(hand[2].getRank() == hand[3].getRank() && hand[2].getRank() == hand[4].getRank())
+			return true;
 		return false;
 	}
 
 	private boolean twoPair(Card[] hand) {
-		// TODO Auto-generated method stub
+		int count = 0;
+		for(int i=0;i<=MAX_HAND-1;i++){
+			for(int j=0;j<=hand.length-2;j++){
+				if(hand[j].getRank() == hand[j+1].getRank()){
+					count++;
+				}      
+			}   
+		}
+		if(count == 2)
+			return true;
 		return false;
 	}
 
 	private boolean pair(Card[] hand) {
-		// TODO Auto-generated method stub
+		for(int i=0;i<=MAX_HAND-1;i++){
+			for(int j=0;j<=hand.length-2;j++){
+				if(hand[j].getRank() == hand[j+1].getRank()){
+					return true;
+				}      
+			}   
+		}
 		return false;
 	}
 }

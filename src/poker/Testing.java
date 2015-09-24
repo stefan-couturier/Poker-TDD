@@ -103,6 +103,7 @@ public class Testing {
 		Game g1 = new Game();
 		String r1 = g1.checkHand(c);
 		assertEquals(r1, "Royal Flush");
+		System.out.print("\n" + r1);
 		
 		c[0].setCard('H', 10);
 		c[1].setCard('H', 9);
@@ -111,6 +112,7 @@ public class Testing {
 		c[4].setCard('H', 6);
 		r1 = g1.checkHand(c);
 		assertEquals(r1, "Straight Flush");
+		System.out.print("\n" + r1);
 		
 		c[0].setCard('H', 6);
 		c[1].setCard('D', 6);
@@ -119,6 +121,7 @@ public class Testing {
 		c[4].setCard('H', 7);
 		r1 = g1.checkHand(c);
 		assertEquals(r1, "Four of a Kind");
+		System.out.print("\n" + r1);
 		
 		c[0].setCard('H', 6);
 		c[1].setCard('D', 6);
@@ -127,6 +130,7 @@ public class Testing {
 		c[4].setCard('H', 7);
 		r1 = g1.checkHand(c);
 		assertEquals(r1, "Full House");
+		System.out.print("\n" + r1);
 		
 		c[0].setCard('H', 4);
 		c[1].setCard('H', 6);
@@ -135,6 +139,7 @@ public class Testing {
 		c[4].setCard('H', 14);
 		r1 = g1.checkHand(c);
 		assertEquals(r1, "Flush");
+		System.out.print("\n" + r1);
 		
 		c[0].setCard('H', 6);
 		c[1].setCard('D', 7);
@@ -143,6 +148,7 @@ public class Testing {
 		c[4].setCard('H', 10);
 		r1 = g1.checkHand(c);
 		assertEquals(r1, "Straight");	
+		System.out.print("\n" + r1);
 		
 		c[0].setCard('H', 6);
 		c[1].setCard('D', 6);
@@ -151,6 +157,7 @@ public class Testing {
 		c[4].setCard('H', 10);
 		r1 = g1.checkHand(c);
 		assertEquals(r1, "Three of a Kind");
+		System.out.print("\n" + r1);
 		
 		c[0].setCard('H', 2);
 		c[1].setCard('D', 2);
@@ -159,6 +166,7 @@ public class Testing {
 		c[4].setCard('H', 9);
 		r1 = g1.checkHand(c);
 		assertEquals(r1, "Two Pair");
+		System.out.print("\n" + r1);
 		
 		c[0].setCard('H', 2);
 		c[1].setCard('D', 2);
@@ -167,6 +175,7 @@ public class Testing {
 		c[4].setCard('H', 9);
 		r1 = g1.checkHand(c);
 		assertEquals(r1, "Pair");
+		System.out.print("\n" + r1);
 		
 		c[0].setCard('H', 2);
 		c[1].setCard('D', 3);
@@ -175,5 +184,6 @@ public class Testing {
 		c[4].setCard('H', 9);
 		r1 = g1.checkHand(c);
 		assertEquals(r1, "High Card");
+		System.out.print("\n" + r1);
 	}
 }
