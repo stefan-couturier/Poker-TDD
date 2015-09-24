@@ -90,7 +90,14 @@ public class Testing {
 				(h1[3].getRank() <= h1[4].getRank()));
 		System.out.print("\n" + p1.printHand());
 		
+		Card[] c = new Card[5];
+		c[0] = new Card('H', 10);
+		c[1] = new Card('H', 11);
+		c[2] = new Card('H', 12);
+		c[3] = new Card('H', 13);
+		c[4] = new Card('H', 14);
 		Game g1 = new Game();
-		String r1 = g1.checkHand(p1.getHand());
+		String r1 = g1.checkHand(c);
+		assertEquals(r1, "Royal Flush");
 	}
 }
