@@ -199,31 +199,37 @@ public class Testing {
 		c[4].setCard('D', 14);
 		p1.setHand(c);
 		
-		c[0].setCard('C', 8);
-		c[1].setCard('C', 9);
-		c[2].setCard('C', 10);
-		c[3].setCard('C', 11);
-		c[4].setCard('C', 12);
-		p2.setHand(c);
+		Card[] c2 = new Card[5];
+		c2[0] = new Card('C', 8);
+		c2[1] = new Card('C', 9);
+		c2[2] = new Card('C', 10);
+		c2[3] = new Card('C', 11);
+		c2[4] = new Card('C', 12);
+		p2.setHand(c2);
 		
-		c[0].setCard('H', 7);
-		c[1].setCard('H', 8);
-		c[2].setCard('H', 9);
-		c[3].setCard('H', 10);
-		c[4].setCard('H', 11);
-		p3.setHand(c);
+		Card[] c3= new Card[5];
+		c3[0] = new Card('H', 7);
+		c3[1] = new Card('H', 8);
+		c3[2] = new Card('H', 9);
+		c3[3] = new Card('H', 10);
+		c3[4] = new Card('H', 11);
+		p3.setHand(c3);
 		
-		c[0].setCard('D', 2);
-		c[1].setCard('C', 2);
-		c[2].setCard('H', 3);
-		c[3].setCard('D', 3);
-		c[4].setCard('C', 3);
-		p4.setHand(c);
+		Card[] c4= new Card[5];
+		c4[0] = new Card('D', 2);
+		c4[1] = new Card('C', 2);
+		c4[2] = new Card('H', 3);
+		c4[3] = new Card('D', 3);
+		c4[4] = new Card('C', 3);
+		p4.setHand(c4);
 		
+		p1.setHandValue(g1.checkHand(p1.getHand()));
+		p2.setHandValue(g1.checkHand(p2.getHand()));
 		g1.compareHands(p1, p2);
+		System.out.println(p1.getRank() + "      " + p2.getRank());
 		assertTrue(p1.getRank() < p2.getRank());
-		assertTrue(p1.rankString() == "Full House");
-		assertTrue(p1.rankString() == "Straight Flush");
+		assertTrue(p1.getHandValue() == 6);
+		assertTrue(p2.getHandValue() == 8);
 		g1.compareHands(p1, p2);
 	}
 }
