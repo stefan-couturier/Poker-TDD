@@ -185,5 +185,45 @@ public class Testing {
 		r1 = g1.checkHand(c);
 		assertEquals(r1, "High Card");
 		System.out.print("\n" + r1);
+		
+		//test if players have same hand
+		Player p1 = new Player("Player 1");
+		Player p2 = new Player("Player 2");
+		Player p3 = new Player("Player 1");
+		Player p4 = new Player("Player 2");
+		
+		c[0].setCard('D', 13);
+		c[1].setCard('C', 13);
+		c[2].setCard('H', 13);
+		c[3].setCard('C', 14);
+		c[4].setCard('D', 14);
+		p1.setHand(c);
+		
+		c[0].setCard('C', 8);
+		c[1].setCard('C', 9);
+		c[2].setCard('C', 10);
+		c[3].setCard('C', 11);
+		c[4].setCard('C', 12);
+		p2.setHand(c);
+		
+		c[0].setCard('H', 7);
+		c[1].setCard('H', 8);
+		c[2].setCard('H', 9);
+		c[3].setCard('H', 10);
+		c[4].setCard('H', 11);
+		p3.setHand(c);
+		
+		c[0].setCard('D', 2);
+		c[1].setCard('C', 2);
+		c[2].setCard('H', 3);
+		c[3].setCard('D', 3);
+		c[4].setCard('C', 3);
+		p4.setHand(c);
+		
+		g1.compareHands(p1, p2);
+		assertTrue(p1.getRank() < p2.getRank());
+		assertTrue(p1.rankString() == "Full House");
+		assertTrue(p1.rankString() == "Straight Flush");
+		g1.compareHands(p1, p2);
 	}
 }
