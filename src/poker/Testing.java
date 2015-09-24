@@ -89,6 +89,8 @@ public class Testing {
 				(h1[2].getRank() <= h1[3].getRank()) &&
 				(h1[3].getRank() <= h1[4].getRank()));
 		System.out.print("\n" + p1.printHand());
+		
+		Game g1 = new Game();
+		String r1 = g1.checkHand(p1.getHand());
 	}
-
 }

@@ -2,7 +2,7 @@ package poker;
 
 public class Player {
 	private String name;
-	Card[] hand;
+	private Card[] hand;
 	final int MAX_HAND = 5;
 	
 	Player(String s){
