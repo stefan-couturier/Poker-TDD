@@ -105,11 +105,11 @@ public class Testing {
 		assertEquals(r1, "Royal Flush");
 		System.out.print("\n" + r1);
 		
-		c[0].setCard('H', 10);
-		c[1].setCard('H', 9);
+		c[0].setCard('H', 6);
+		c[1].setCard('H', 7);
 		c[2].setCard('H', 8);
-		c[3].setCard('H', 7);
-		c[4].setCard('H', 6);
+		c[3].setCard('H', 9);
+		c[4].setCard('H', 10);
 		r1 = g1.checkHand(c);
 		assertEquals(r1, "Straight Flush");
 		System.out.print("\n" + r1);

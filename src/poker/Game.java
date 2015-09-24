@@ -13,7 +13,7 @@ public class Game {
 		else if(fullHouse(hand))
 			return "Full House";
 		else if(flush(hand))
-			return "Flash";
+			return "Flush";
 		else if(straight(hand))
 			return "Straight";
 		else if(threeKind(hand))
@@ -80,7 +80,7 @@ public class Game {
 			if(hand[x-1].getRank() != hand[x].getRank()- 1)
 				return false;
 		}
-		return false;
+		return true;
 	}
 
 	private boolean threeKind(Card[] hand) {
@@ -96,8 +96,8 @@ public class Game {
 	private boolean twoPair(Card[] hand) {
 		int count = 0;
 		for(int i=0;i<=MAX_HAND-1;i++){
-			for(int j=0;j<=hand.length-2;j++){
-				if(hand[j].getRank() == hand[j+1].getRank()){
+			for(int j=i+1;j<=MAX_HAND-2;j++){
+				if(hand[i].getRank() == hand[j].getRank()){
 					count++;
 				}      
 			}   
