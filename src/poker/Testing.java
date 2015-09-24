@@ -11,6 +11,7 @@ public class Testing {
 		testCards();
 		testDeck();
 		testPlayer();
+		testGameLogic();
 	}
 	
 	public void testCards(){
@@ -89,7 +90,10 @@ public class Testing {
 				(h1[2].getRank() <= h1[3].getRank()) &&
 				(h1[3].getRank() <= h1[4].getRank()));
 		System.out.print("\n" + p1.printHand());
-		
+	}
+	
+	public void testGameLogic(){
+
 		Card[] c = new Card[5];
 		c[0] = new Card('H', 10);
 		c[1] = new Card('H', 11);
@@ -99,5 +103,77 @@ public class Testing {
 		Game g1 = new Game();
 		String r1 = g1.checkHand(c);
 		assertEquals(r1, "Royal Flush");
+		
+		c[0].setCard('H', 10);
+		c[1].setCard('H', 9);
+		c[2].setCard('H', 8);
+		c[3].setCard('H', 7);
+		c[4].setCard('H', 6);
+		r1 = g1.checkHand(c);
+		assertEquals(r1, "Straight Flush");
+		
+		c[0].setCard('H', 6);
+		c[1].setCard('D', 6);
+		c[2].setCard('C', 6);
+		c[3].setCard('S', 6);
+		c[4].setCard('H', 7);
+		r1 = g1.checkHand(c);
+		assertEquals(r1, "Four of a Kind");
+		
+		c[0].setCard('H', 6);
+		c[1].setCard('D', 6);
+		c[2].setCard('C', 6);
+		c[3].setCard('S', 7);
+		c[4].setCard('H', 7);
+		r1 = g1.checkHand(c);
+		assertEquals(r1, "Full House");
+		
+		c[0].setCard('H', 4);
+		c[1].setCard('H', 6);
+		c[2].setCard('H', 7);
+		c[3].setCard('H', 10);
+		c[4].setCard('H', 14);
+		r1 = g1.checkHand(c);
+		assertEquals(r1, "Flush");
+		
+		c[0].setCard('H', 6);
+		c[1].setCard('D', 7);
+		c[2].setCard('C', 8);
+		c[3].setCard('S', 9);
+		c[4].setCard('H', 10);
+		r1 = g1.checkHand(c);
+		assertEquals(r1, "Straight");	
+		
+		c[0].setCard('H', 6);
+		c[1].setCard('D', 6);
+		c[2].setCard('C', 6);
+		c[3].setCard('S', 7);
+		c[4].setCard('H', 10);
+		r1 = g1.checkHand(c);
+		assertEquals(r1, "Three of a Kind");
+		
+		c[0].setCard('H', 2);
+		c[1].setCard('D', 2);
+		c[2].setCard('C', 6);
+		c[3].setCard('S', 6);
+		c[4].setCard('H', 9);
+		r1 = g1.checkHand(c);
+		assertEquals(r1, "Two Pair");
+		
+		c[0].setCard('H', 2);
+		c[1].setCard('D', 2);
+		c[2].setCard('C', 4);
+		c[3].setCard('S', 7);
+		c[4].setCard('H', 9);
+		r1 = g1.checkHand(c);
+		assertEquals(r1, "Pair");
+		
+		c[0].setCard('H', 2);
+		c[1].setCard('D', 3);
+		c[2].setCard('C', 4);
+		c[3].setCard('S', 7);
+		c[4].setCard('H', 9);
+		r1 = g1.checkHand(c);
+		assertEquals(r1, "High Card");
 	}
 }

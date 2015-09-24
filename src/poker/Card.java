@@ -11,6 +11,7 @@ public class Card {
 	}
 	public char getSuit(){ return suit; }
 	public int getRank() { return rank; }
+	public void setCard(char s, int r) { suit = s; rank = r;}
 
 	public String print(){
 		String value = "";
