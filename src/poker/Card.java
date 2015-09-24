@@ -15,7 +15,7 @@ public class Card {
 	public String print(){
 		String value = "";
 		
-		if(rank == 1)
+		if(rank == 14)
 			value = "Ace";
 		else if(rank == 2)
 			value = "Two";

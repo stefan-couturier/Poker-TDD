@@ -15,26 +15,26 @@ public class Testing {
 	
 	public void testCards(){
 		//create card assign values
-		Card c1 = new Card('S',1);
+		Card c1 = new Card('S',14);
 		assertEquals("AceSpades", c1.print());
 		
-		Card c2 = new Card('D', 1);
+		Card c2 = new Card('D', 14);
 		assertEquals( 0, c2.compareTo(c1));
 		
 		Card c3 = new Card('D', 6);
 
-		assertEquals( 1, c3.compareTo(c2));
-		assertEquals( -1, c2.compareTo(c3));
+		assertEquals( -1, c3.compareTo(c2));
+		assertEquals( 1, c2.compareTo(c3));
 	}
 	
 	public void testDeck(){
 		//building deck and checking card values
 		Deck d1 = new Deck();
 		assertNotNull(d1);
-		assertEquals("AceClubs", d1.cards[0].print());
-		assertEquals("KingClubs", d1.cards[12].print());
-		assertEquals("ThreeDiamonds", d1.cards[15].print());
-		assertEquals("KingHearts", d1.cards[51].print());
+		assertEquals("TwoClubs", d1.cards[0].print());
+		assertEquals("KingClubs", d1.cards[11].print());
+		assertEquals("ThreeDiamonds", d1.cards[14].print());
+		assertEquals("KingHearts", d1.cards[50].print());
 		
 		//testing if shuffle works
 		Deck d2 = new Deck();
@@ -77,7 +77,6 @@ public class Testing {
 		Player p1 = new Player("Stefan");
 		assertNotNull(p1);
 		assertEquals(p1.getName(), "Stefan");
-		
 		
 				//check ordering of hand
 		Deck d1 = new Deck();
