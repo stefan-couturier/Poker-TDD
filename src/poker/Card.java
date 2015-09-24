@@ -1,9 +1,17 @@
 package poker;
 
 public class Card {
-	public int rank;
-	public char suit;
-	
+	final int MAX_HAND = 5;
+	private int rank;
+	private char suit;
+
+	public Card(char s, int r){
+		suit = s;
+		rank = r;
+	}
+	public char getSuit(){ return suit; }
+	public int getRank() { return rank; }
+
 	public String print(){
 		String value = "";
 		
@@ -57,9 +65,5 @@ public class Card {
 			return -1;
 		
 		return 999;
-	}
-	
-	public void sort() {
-		
 	}
 }

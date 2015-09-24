@@ -24,9 +24,7 @@ public class Deck {
 			else if(s == 3)
 				suit = 'H';
 			for(int rank = 1; rank <= 13; rank++){
-				cards[counter] = new Card();
-				cards[counter].suit = suit;
-				cards[counter].rank = rank;
+				cards[counter] = new Card(suit, rank);
 				++counter;
 			}
 		}
