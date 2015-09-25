@@ -1,6 +1,6 @@
 package poker;
 
-public class Game {
+public class Logic {
 	final int MAX_HAND = 5;
 
 	public String checkHand(Card[] hand) {

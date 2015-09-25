@@ -12,6 +12,7 @@ public class Testing {
 		testDeck();
 		testPlayer();
 		testGameLogic();
+		testGame();
 	}
 	
 	public void testCards(){
@@ -93,14 +94,13 @@ public class Testing {
 	}
 	
 	public void testGameLogic(){
-
 		Card[] c = new Card[5];
 		c[0] = new Card('H', 10);
 		c[1] = new Card('H', 11);
 		c[2] = new Card('H', 12);
 		c[3] = new Card('H', 13);
 		c[4] = new Card('H', 14);
-		Game g1 = new Game();
+		Logic g1 = new Logic();
 		String r1 = g1.checkHand(c);
 		assertEquals(r1, "Royal Flush");
 		System.out.print("\n" + r1);
@@ -258,5 +258,15 @@ public class Testing {
 		assertTrue(p2.getRank() > p3.getRank());
 		assertTrue(p2.getRank() > p4.getRank());
 		assertTrue(p3.getRank() > p4.getRank());
+	}
+
+	public void testGame(){
+		Game g1 = new Game();
+		assertNotNull(g1);
+		g1.playersForRound();
+		assertTrue(g1.getPlayersNum > 1 && g1.getPlayersNum < 5);
+		for(int i=0;i< g1.getPlayersNum();i++){
+			System.out.println(g1.getPlayersNum() + 1 + ": " + g1.players[i].getName());
+		}
 	}
 }
