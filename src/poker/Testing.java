@@ -225,6 +225,10 @@ public class Testing {
 		
 		p1.setHandValue(g1.checkHand(p1.getHand()));
 		p2.setHandValue(g1.checkHand(p2.getHand()));
+		
+		p1.setCardsValue();
+		p2.setCardsValue();
+		
 		g1.compareHands(p1, p2);
 		System.out.println(p1.getRank() + "      " + p2.getRank());
 		assertTrue(p1.getRank() < p2.getRank());
@@ -234,6 +238,10 @@ public class Testing {
 		
 		p3.setHandValue(g1.checkHand(p3.getHand()));
 		p4.setHandValue(g1.checkHand(p4.getHand()));
+		
+		p3.setCardsValue();
+		p4.setCardsValue();
+		
 		g1.compareHands(p1, p3);
 		g1.compareHands(p1, p4);
 		g1.compareHands(p2, p3);
