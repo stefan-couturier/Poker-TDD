@@ -6,21 +6,29 @@ public class Player {
 	private final int MAX_HAND = 5;
 	private int rank;
 	private int handValue;
+	private int cardsValue;
+	
 	
 	Player(String s){
 		hand = null;
 		name = s;
 		rank = 0;
 		handValue = -1;
+		cardsValue = 0;
 	}
 	
 	public String getName(){ return name; }
-	public void setHand(Card[] h) { hand = h; }
 	public Card[] getHand() { return hand; }
 
 	public int getHandValue() { return handValue; }
 	public int getRank() { return rank; }
 	public void addRank() { rank++; }
+	public int getCardsValue() { return cardsValue;}
+	
+	public void setHand(Card[] h){
+		hand = h;
+		setCardsValue();
+	}
 	
 	public void setHandValue(String s){
 		if(s == "Royal Flush")
@@ -69,6 +77,12 @@ public class Player {
 		}
 		s = s.substring(0, s.length()-1);
 		return s;
+	}
+
+	public void setCardsValue() {
+		for(int i=0; i< MAX_HAND;i++){
+			cardsValue += hand[i].getRank();
+		}
 	}
 }
 

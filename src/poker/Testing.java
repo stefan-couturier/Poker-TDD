@@ -248,8 +248,15 @@ public class Testing {
 		g1.compareHands(p2, p4);
 		g1.compareHands(p3, p4);
 		
+		assertTrue(p1.getRank() > p4.getRank());
+		assertTrue(p3.getHandValue() == 8);
+		assertTrue(p4.getHandValue() == 6);
+		
 		assertTrue(p1.getRank() < p2.getRank());
-		assertTrue(p1.getHandValue() == 6);
-		assertTrue(p2.getHandValue() == 8);
+		assertTrue(p1.getRank() < p3.getRank());
+		assertTrue(p1.getRank() > p4.getRank());
+		assertTrue(p2.getRank() > p3.getRank());
+		assertTrue(p2.getRank() > p4.getRank());
+		assertTrue(p3.getRank() > p4.getRank());
 	}
 }
