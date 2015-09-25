@@ -117,22 +117,4 @@ public class Logic {
 		}
 		return false;
 	}
-
-	public void compareHands(Player p1, Player p2) {
-		if(p1.getHandValue() > p2.getHandValue()){
-			p1.addRank(); p1.addRank();
-		}
-		else if(p1.getHandValue() < p2.getHandValue()){
-			p2.addRank(); p2.addRank();
-		}
-		else if(p1.getCardsValue() > p2.getCardsValue()){
-				p1.addRank(); p1.addRank();
-		}
-		else if(p1.getCardsValue() < p2.getCardsValue()){
-			p1.addRank(); p1.addRank();
-		}
-		else{
-			p1.addRank(); p2.addRank();
-		}
-	}
 }

@@ -34,4 +34,47 @@ public class Game {
 	public static void main(String args[]){
 		System.out.println("Welcome to Simple Poker");
 	}
+	
+	public void compareHands() {
+		for(int i=0;i<=4-1;i++){
+			for(int j=0;j<=4-2;j++){
+				if(players[j].getHandValue() > players[j+1].getHandValue()){
+					players[j].addRank(); players[j].addRank();
+				}
+				else if(players[j].getHandValue() < players[j+1].getHandValue()){
+					players[j+1].addRank(); players[j+1].addRank();
+				}
+				else if(players[j].getCardsValue() > players[j+1].getCardsValue()){
+					players[j].addRank(); players[j].addRank();
+				}
+				else if(players[j].getCardsValue() < players[j+1].getCardsValue()){
+					players[j+1].addRank(); players[j+1].addRank();
+				}
+				else{
+					players[j+1].addRank(); players[j+1].addRank();
+				}
+			}
+		}		
+	}
+
+	public void sortPlayers() {
+		Player temp;
+		for(int i=0;i<=activePlayers-1;i++){
+			for(int j=0;j<=activePlayers-2;j++){
+				if(players[j].getRank() < players[j+1].getRank()){
+					temp = null;    
+					temp = players[j];
+					players[j] = players[j+1];
+					players[j+1] = temp;
+				}      
+			}   
+		}
+	}
+
+	public void printPlayers() {
+		for(int i =0; i < activePlayers;i++){
+			System.out.println(players[i].printHand() + "----" + players[i].printHandType());
+		}
+		
+	}
 }

@@ -87,6 +87,31 @@ public class Player {
 			cardsValue += hand[i].getRank();
 		}
 	}
+
+	public String printHandType() {
+		String s = "Error";
+		if(handValue == 9)
+			s = "Royal Flush";
+		else if(handValue == 8)
+			s = "Straight Flush";
+		else if(handValue == 7)
+			s = "Four of a Kind";
+		else if(handValue == 6)
+			s =  "Full House";
+		else if(handValue == 5)
+			s =  "Flush";
+		else if(handValue == 4)
+			s = "Straight";
+		else if(handValue == 3)
+			s =  "Three of a Kind";
+		else if(handValue == 2)
+			s = "Two Pair";
+		else if(handValue == 1)
+			s = "Pair";
+		else if(handValue == 0)
+			s = "High Card";
+		return s;
+	}
 }
 
 
