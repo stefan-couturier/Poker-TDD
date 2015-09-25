@@ -1,5 +1,7 @@
 package poker;
 
+import poker.Logic;
+
 public class Player {
 	private String name;
 	private Card[] hand;
@@ -28,6 +30,7 @@ public class Player {
 	public void setHand(Card[] h){
 		hand = h;
 		setCardsValue();
+		setHandValue(Logic.checkHand(hand));
 	}
 	
 	public void setHandValue(String s){
@@ -71,7 +74,7 @@ public class Player {
 	
 
 	public String printHand() {
-		String s = "";
+		String s = name + ": ";
 		for(int x=0; x< MAX_HAND;x++){
 			s+= hand[x].print() + ",";
 		}

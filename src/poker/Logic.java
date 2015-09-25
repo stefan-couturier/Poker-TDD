@@ -1,9 +1,9 @@
 package poker;
 
 public class Logic {
-	final int MAX_HAND = 5;
+	final static int MAX_HAND = 5;
 
-	public String checkHand(Card[] hand) {
+	public static String checkHand(Card[] hand) {
 		if(royalFlush(hand))
 			return "Royal Flush";
 		else if(straightFlush(hand))
@@ -26,7 +26,7 @@ public class Logic {
 			return "High Card";
 	}
 
-	private boolean royalFlush(Card[] hand) {
+	private static boolean royalFlush(Card[] hand) {
 		if(hand[0].getRank() == 10 && hand[1].getRank() == 11 && hand[2].getRank() == 12 && 
 				hand[3].getRank() == 13 && hand[4].getRank() == 14 && hand[0].getSuit() == hand[1].getSuit() && 
 				hand[1].getSuit() == hand[2].getSuit() && hand[2].getSuit() == hand[3].getSuit() && 
@@ -35,7 +35,7 @@ public class Logic {
 		return false;
 	}
 
-	private boolean straightFlush(Card[] hand) {
+	private static boolean straightFlush(Card[] hand) {
 		for(int x=1; x < MAX_HAND; x++){
 			if(hand[0].getSuit() != hand[x].getSuit())
 				return false;
@@ -47,7 +47,7 @@ public class Logic {
 		return true;
 	}
 
-	private boolean fourKind(Card[] hand) {
+	private static boolean fourKind(Card[] hand) {
 		if(hand[0].getRank() == hand[1].getRank() && hand[0].getRank() == hand[2].getRank() && 
 				hand[0].getRank() == hand[3].getRank())
 			return true;
@@ -57,7 +57,7 @@ public class Logic {
 		return false;
 	}
 
-	private boolean fullHouse(Card[] hand) {
+	private static boolean fullHouse(Card[] hand) {
 		if(hand[0].getRank() == hand[1].getRank() && hand[0].getRank() == hand[2].getRank() && 
 				hand[3].getRank() == hand[4].getRank())
 			return true;
@@ -67,7 +67,7 @@ public class Logic {
 		return false;
 	}
 
-	private boolean flush(Card[] hand) {
+	private static boolean flush(Card[] hand) {
 		for(int x=1; x < MAX_HAND; x++){
 			if(hand[0].getSuit() != hand[x].getSuit())
 				return false;
@@ -75,7 +75,7 @@ public class Logic {
 		return true;
 	}
 
-	private boolean straight(Card[] hand) {
+	private static boolean straight(Card[] hand) {
 		for(int x=1; x< MAX_HAND; x++){
 			if(hand[x-1].getRank() != hand[x].getRank()- 1)
 				return false;
@@ -83,7 +83,7 @@ public class Logic {
 		return true;
 	}
 
-	private boolean threeKind(Card[] hand) {
+	private static boolean threeKind(Card[] hand) {
 		if(hand[0].getRank() == hand[1].getRank() && hand[0].getRank() == hand[2].getRank())
 			return true;
 		if(hand[1].getRank() == hand[2].getRank() && hand[1].getRank() == hand[3].getRank())
@@ -93,7 +93,7 @@ public class Logic {
 		return false;
 	}
 
-	private boolean twoPair(Card[] hand) {
+	private static boolean twoPair(Card[] hand) {
 		int count = 0;
 		for(int i=0;i<=MAX_HAND-1;i++){
 			for(int j=i+1;j<=MAX_HAND-2;j++){
@@ -107,7 +107,7 @@ public class Logic {
 		return false;
 	}
 
-	private boolean pair(Card[] hand) {
+	private static boolean pair(Card[] hand) {
 		for(int i=0;i<=MAX_HAND-1;i++){
 			for(int j=0;j<=hand.length-2;j++){
 				if(hand[j].getRank() == hand[j+1].getRank()){

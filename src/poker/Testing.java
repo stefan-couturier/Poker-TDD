@@ -223,6 +223,7 @@ public class Testing {
 		c4[4] = new Card('C', 3);
 		p4.setHand(c4);
 		
+		//ranking players hand
 		p1.setHandValue(g1.checkHand(p1.getHand()));
 		p2.setHandValue(g1.checkHand(p2.getHand()));
 		
@@ -258,6 +259,9 @@ public class Testing {
 		assertTrue(p2.getRank() > p3.getRank());
 		assertTrue(p2.getRank() > p4.getRank());
 		assertTrue(p3.getRank() > p4.getRank());
+		
+		
+		
 	}
 
 	public void testGame(){
@@ -268,5 +272,43 @@ public class Testing {
 		for(int i=0;i< g1.getPlayersNum();i++){
 			System.out.println((i + 1) + ": " + g1.players[i].getName());
 		}
+		
+		if(g1.getPlayersNum() >= 2){
+			Card[] c1 = new Card[5];
+			c1[0].setCard('D', 13);
+			c1[1].setCard('C', 13);
+			c1[2].setCard('H', 13);
+			c1[3].setCard('C', 14);
+			c1[4].setCard('D', 14);
+			g1.players[0].setHand(c1);
+		
+			Card[] c2 = new Card[5];
+			c2[0] = new Card('C', 8);
+			c2[1] = new Card('C', 9);
+			c2[2] = new Card('C', 10);
+			c2[3] = new Card('C', 11);
+			c2[4] = new Card('C', 12);
+			g1.players[1].setHand(c2);
+		}
+		if(g1.getPlayersNum() >= 3){
+			Card[] c3= new Card[5];
+			c3[0] = new Card('H', 7);
+			c3[1] = new Card('H', 8);
+			c3[2] = new Card('H', 9);
+			c3[3] = new Card('H', 10);
+			c3[4] = new Card('H', 11);
+			g1.players[2].setHand(c3);
+		}
+		if(g1.getPlayersNum() == 4){
+			Card[] c4= new Card[5];
+			c4[0] = new Card('D', 2);
+			c4[1] = new Card('C', 2);
+			c4[2] = new Card('H', 3);
+			c4[3] = new Card('D', 3);
+			c4[4] = new Card('C', 3);
+			g1.players[3].setHand(c4);
+		}
+		g1.sortPlayers();
+		g1.printPlayers();
 	}
 }

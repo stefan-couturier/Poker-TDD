@@ -28,5 +28,10 @@ public class Game {
 			n = in.next();
 			players[x] = new Player(n);
 		}
+		in.close();
 	}	
+	
+	public static void main(String args[]){
+		System.out.println("Welcome to Simple Poker");
+	}
 }
