@@ -33,7 +33,7 @@ public class Deck {
 	public void shuffle() {
 		position = 0;
 		int num1, num2;
-		for(int i=0; i < 1000; i++){
+		for(int i=0; i < 3000; i++){
 			num1 = random.nextInt(MAX_SIZE);
 			num2 = random.nextInt(MAX_SIZE);
 			Card temp = cards[num1];
