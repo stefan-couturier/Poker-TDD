@@ -264,9 +264,9 @@ public class Testing {
 		Game g1 = new Game();
 		assertNotNull(g1);
 		g1.playersForRound();
-		assertTrue(g1.getPlayersNum > 1 && g1.getPlayersNum < 5);
+		assertTrue(g1.getPlayersNum() > 1 && g1.getPlayersNum() < 5);
 		for(int i=0;i< g1.getPlayersNum();i++){
-			System.out.println(g1.getPlayersNum() + 1 + ": " + g1.players[i].getName());
+			System.out.println((i + 1) + ": " + g1.players[i].getName());
 		}
 	}
 }
